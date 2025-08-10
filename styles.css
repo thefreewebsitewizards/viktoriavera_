@@ -1,0 +1,2367 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #000;
+    padding: 30px 0;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.logo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 8px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.logo p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: #ccc;
+    text-align: center;
+    font-weight: 300;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+}
+
+.content-left {
+    flex: 1;
+    padding: 0 80px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+}
+
+.content-left::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, #ddd 20%, #ddd 80%, transparent);
+}
+
+.hero-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+    color: #4a5568;
+    margin-bottom: 60px;
+    letter-spacing: -1px;
+}
+
+/* Marquee Section */
+.marquee-section {
+    background: #494949;
+    color: #fff;
+    padding: 0 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee {
+    display: flex;
+    width: 100%;
+}
+
+.marquee-content {
+    display: flex;
+    animation: marquee 25s linear infinite;
+    gap: 40px;
+    min-width: 200%;
+}
+
+.marquee-content span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background: #000000;
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.testimonials-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.testimonials-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -1px;
+    position: relative;
+}
+
+.testimonials-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: #000000;
+}
+
+.testimonials-marquee {
+    display: flex;
+    width: 100%;
+}
+
+.testimonials-content {
+    display: flex;
+    animation: testimonials-scroll 10s linear infinite;
+    gap: 60px;
+    min-width: 200%;
+}
+
+.testimonial-item {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    min-width: 400px;
+    max-width: 400px;
+    flex-shrink: 0;
+    border-left: 4px solid #bbbbbb;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.testimonial-item p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #000000;
+    margin: 0 0 15px 0;
+    font-style: italic;
+}
+
+.testimonial-author {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #000000;
+    letter-spacing: 0.5px;
+}
+
+@keyframes testimonials-scroll {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Footer Styles */
+.footer {
+    background: #000000;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: #fff;
+    margin: 0;
+}
+
+.footer-logo p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    color: #ccc;
+    margin: 0;
+    font-weight: 300;
+}
+
+.footer-social {
+    margin: 10px 0;
+}
+
+.social-link {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #ccc;
+}
+
+.footer-credit {
+    margin-top: 15px;
+}
+
+.footer-credit p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    color: #888;
+    margin: 0;
+}
+
+.credit-link {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.credit-link:hover {
+    color: #fff;
+}
+
+/* Precise About section layout (matches reference) */
+.about-section {
+    background: #fff;
+    padding: 80px 0;
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 520px 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+/* Left main image with quote overlay */
+.about-image-container {
+    position: relative;
+    background: #f3f3f3;
+    border: 1px solid #eee;
+    padding: 8px;
+}
+
+.about-main-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-quote-overlay {
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    background: rgba(0,0,0,0.65);
+    color: #fff;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    padding: 10px 12px;
+    border-radius: 4px;
+    max-width: 80%;
+}
+
+/* Right text column */
+.about-header { margin-bottom: 12px; }
+.about-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #222;
+    margin: 0 0 4px 0;
+}
+.about-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: #888;
+}
+
+.about-description p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 14px;
+}
+
+/* Two small images grid under text */
+.about-images-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 18px;
+}
+.grid-image img {
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    border: 1px solid #eee;
+    background: #fafafa;
+}
+
+/* Bottom long paragraph spanning full width */
+.about-bottom { grid-column: 1 / -1; margin-top: 28px; }
+.about-bottom-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-content { 
+    grid-template-columns: 1fr; 
+    gap: 20px;
+    padding: 0 20px;
+  }
+  .about-main-image { 
+    height: auto; 
+    max-height: 400px;
+  }
+  .about-quote-overlay {
+    padding: 15px;
+    font-size: 16px;
+  }
+  .about-right {
+    padding: 20px 0;
+  }
+  .about-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .about-name {
+    font-size: 1.7rem;
+    margin-bottom: 8px;
+  }
+  .about-title {
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+  .about-description p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    text-align: left;
+  }
+  .about-images-grid {
+    gap: 12px;
+    margin-top: 15px;
+  }
+  .grid-image img { 
+    height: 200px; 
+    object-fit: contain;
+  }
+  .about-bottom {
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+  .about-bottom-text p {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: left;
+  }
+}
+
+/* Additional mobile styles for smaller screens */
+@media (max-width: 600px) {
+  .about-content {
+    padding: 0 15px;
+    gap: 15px;
+  }
+  .about-images-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .grid-image img {
+    height: 180px;
+  }
+  .about-name {
+    font-size: 1.5rem;
+  }
+  .about-title {
+    font-size: 12px;
+  }
+  .about-description p {
+    font-size: 14px;
+  }
+  .about-bottom-text p {
+    font-size: 13px;
+  }
+}
+.about-text {
+    padding: 0 20px;
+}
+
+.about-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.about-text h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #666;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.about-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.about-section .cta-button {
+    margin-top: 30px;
+}
+
+.cta-button {
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.cta-button:hover {
+    color: #333;
+    border-bottom-color: #333;
+}
+
+.content-right {
+    flex: 1;
+    background-color: #e8e8e8;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    padding: 0;
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+.image-switcher {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.switch-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background-color: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.switch-btn:hover {
+    background-color: rgba(255,255,255,0.8);
+    transform: scale(1.1);
+}
+
+.switch-btn.active {
+    background-color: #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+.top-nav {
+    background-color: #333;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    z-index: 100;
+}
+
+.top-nav a {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.top-nav a:hover {
+    background-color: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
+/* Services Section */
+.services-section {
+    padding: 80px 0 100px 0;
+    background: #fafafa;
+    position: relative;
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+}
+
+.services-section .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.services-section .section-badge {
+    display: none;
+}
+
+.services-section .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #000;
+    margin-bottom: 60px;
+    text-align: center;
+    letter-spacing: -1px;
+    position: relative;
+}
+
+.services-section .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: #000;
+}
+
+.services-section .section-subtitle {
+    display: none;
+}
+
+
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 60px;
+    max-width: 1400px;
+    margin: 60px auto 0;
+    width: 100%;
+}
+
+.service-card {
+    background: white;
+    padding: 40px;
+    border-left: 4px solid #000;
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    border-left: 4px solid #000;
+    min-width: 0;
+    width: 100%;
+}
+
+.service-card:hover {
+    background: #f8f8f8;
+    transform: translateX(5px);
+}
+
+.service-icon {
+    display: none;
+}
+
+.service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #000;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.package-price {
+    font-family: 'Montserrat', sans-serif;
+    background: #2c3e50;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.95em;
+    text-align: center;
+    margin: 8px 0 12px 0;
+    display: inline-block;
+    width: auto;
+    box-sizing: border-box;
+}
+
+.service-card h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: #2c3e50;
+    margin: 20px 0 10px 0;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.package-description {
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    color: #666;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+    text-align: left;
+}
+
+.service-features li {
+    color: #444;
+    padding: 6px 0;
+    position: relative;
+    padding-left: 20px;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.service-features li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #000;
+    font-weight: normal;
+}
+
+
+
+/* Add-Ons Section within Services */
+.services-section .add-ons-section {
+    margin-top: 40px;
+    padding-top: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add-ons-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #000;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: -0.5px;
+}
+
+.add-ons-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.add-on-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.add-on-item:hover {
+    background: #fafafa;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.add-on-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.add-on-price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Responsive Design for Services */
+@media (max-width: 900px) {
+    /* Header Mobile Styles - Medium Screens */
+    header {
+        padding: 20px 0;
+    }
+    
+    .logo h1 {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+    
+    .logo p {
+        font-size: 0.7rem;
+        letter-spacing: 1.5px;
+    }
+    
+    /* Top Navigation Mobile Styles - Medium Screens */
+    .top-nav {
+        gap: 12px;
+        padding: 10px 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .top-nav a {
+        font-size: 0.8rem;
+        padding: 8px 15px;
+        border-radius: 6px;
+        min-width: 90px;
+        text-align: center;
+        white-space: nowrap;
+    }
+    
+    #services {
+        padding: 60px 0;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 15px;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+    
+    .service-card {
+        padding: 25px;
+    }
+    
+    .service-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+    }
+    
+    .service-card p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+    
+    .service-features li {
+        font-size: 0.85rem;
+        padding: 5px 0;
+    }
+    
+    .add-ons-section {
+        margin-top: 40px;
+        padding-top: 30px;
+    }
+    
+    .add-ons-title {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+    
+    .add-ons-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 15px;
+    }
+    
+    .add-on-item {
+        padding: 15px 0;
+    }
+    
+    .add-on-name {
+        font-size: 0.9rem;
+    }
+    
+    .add-on-price {
+        font-size: 0.85rem;
+    }
+    
+    .faq-layout {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .faq-content {
+        padding: 40px 20px;
+        order: 2;
+    }
+    
+    .faq-content::before {
+        display: none;
+    }
+    
+    .faq-image {
+        order: 1;
+        height: 300px;
+        flex: none;
+    }
+    
+    .modal-content {
+        width: 90%;
+        margin: 20% auto;
+        padding: 1.5rem;
+    }
+    
+    .testimonials-section {
+        padding: 40px 0;
+    }
+    
+    .testimonials-title {
+        font-size: 2.8rem;
+        margin-bottom: 30px;
+    }
+    
+    .testimonial-item {
+        min-width: 250px;
+        max-width: 250px;
+        padding: 20px;
+        margin: 0 8px;
+    }
+    
+    .testimonial-item p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .testimonial-author {
+        font-size: 0.75rem;
+    }
+    
+    /* Inquiry Section Small Mobile */
+    .inquiry-section {
+        padding: 30px 0;
+    }
+    
+    .inquiry-container {
+        padding: 0 1rem;
+    }
+    
+    .inquiry-content {
+        padding: 25px 15px;
+    }
+    
+    .inquiry-content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        line-height: 1.1;
+    }
+    
+    .inquiry-content p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+    
+    .inquiry-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Header Mobile Styles - Small Screens */
+    header {
+        padding: 15px 0;
+    }
+    
+    .logo h1 {
+        font-size: 1.8rem;
+        letter-spacing: 3px;
+        margin-bottom: 2px;
+    }
+    
+    .logo p {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+    }
+    
+    /* Top Navigation Mobile Styles - Small Screens */
+    .top-nav {
+        gap: 8px;
+        padding: 12px 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .top-nav a {
+        font-size: 0.75rem;
+        padding: 8px 12px;
+        border-radius: 6px;
+        min-width: 80px;
+        text-align: center;
+        white-space: nowrap;
+    }
+    
+    /* Hero Section Mobile Styles - Small Screens */
+    .content-left {
+        padding: 30px 15px;
+        min-height: 50vh;
+    }
+    
+    .hero-section h2 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+        line-height: 1.1;
+    }
+    
+    .hero-section p {
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+    }
+    
+    .cta-button {
+        padding: 10px 25px;
+        font-size: 0.85rem;
+    }
+    
+    /* FAQ Section Small Mobile */
+    .faq-content {
+        padding: 30px 15px;
+    }
+    
+    .faq-header h2 {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+    
+    .faq-question-item {
+        padding: 1rem 0;
+    }
+    
+    .faq-question-item h3 {
+        font-size: 0.85rem;
+    }
+    
+    /* Testimonial Section Extra Small Mobile */
+    .testimonial-section {
+        padding: 25px 0;
+    }
+    
+    .testimonial-section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+        padding: 0 15px;
+    }
+    
+    .testimonial-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    .testimonial-container::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .testimonial-track {
+        animation-play-state: paused;
+    }
+    
+    .testimonial-item {
+        min-width: 220px;
+        max-width: 220px;
+        padding: 15px;
+        margin: 0 5px;
+    }
+    
+    .testimonial-item p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+    
+    .testimonial-author {
+        font-size: 0.7rem;
+        line-height: 1.4;
+    }
+    
+    .faq-image {
+        height: 200px;
+        min-height: 200px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 15% auto;
+        padding: 1.2rem;
+    }
+    
+    #modal-question {
+        font-size: 1rem;
+        padding-right: 1.2rem;
+    }
+    
+    #modal-answer {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    
+    /* Testimonial Section Small Mobile */
+    .testimonial-section {
+        padding: 30px 0;
+    }
+    
+    .testimonial-section h2 {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+    
+    .testimonial-item {
+        min-width: 250px;
+        max-width: 250px;
+        padding: 15px;
+        margin: 0 8px;
+    }
+    
+    .testimonial-item p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+    
+    .testimonial-author {
+        font-size: 0.75rem;
+    }
+    
+    /* Contact Section Small Mobile */
+    .contact-section {
+        padding: 30px 0;
+    }
+    
+    .contact-header h2 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+        letter-spacing: 1px;
+    }
+    
+    .contact-left {
+        min-height: 200px;
+    }
+    
+    .contact-right {
+        padding: 30px 20px;
+    }
+    
+    .form-group {
+        margin-bottom: 1.2rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.75rem 1rem;
+        font-size: 0.95rem;
+        border-radius: 8px;
+    }
+    
+    .submit-btn {
+        padding: 0.8rem 1.8rem;
+        font-size: 0.9rem;
+        min-width: 120px;
+    }
+    
+    /* Footer Small Mobile */
+    .footer {
+        padding: 25px 0;
+    }
+    
+    .footer-container {
+        padding: 0 1rem;
+    }
+    
+    .footer-logo h3 {
+        font-size: 1.4rem;
+        letter-spacing: 1.5px;
+    }
+    
+    .footer-logo p {
+        font-size: 0.65rem;
+        letter-spacing: 0.8px;
+    }
+    
+    .footer-social .social-link {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+    
+    /* Marquee Section Mobile Styles - Small Screens */
+    .marquee-section {
+        padding: 6px 0;
+    }
+    
+    .marquee-content {
+        gap: 25px;
+        animation: marquee 15s linear infinite;
+    }
+    
+    .marquee-content span {
+        font-size: 0.75rem;
+        letter-spacing: 0.8px;
+    }
+    
+    .services-grid {
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .service-card {
+        padding: 20px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+    
+    .service-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 6px;
+    }
+    
+    .service-card p {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+    }
+    
+    .service-card h4 {
+        font-size: 1rem;
+        margin: 15px 0 8px 0;
+    }
+    
+    .package-price {
+        font-size: 0.85rem;
+        padding: 5px 10px;
+        margin: 6px 0 10px 0;
+    }
+    
+    .service-features li {
+        font-size: 0.8rem;
+        padding: 4px 0;
+    }
+    
+    .add-ons-section {
+        margin-top: 30px;
+        padding-top: 25px;
+    }
+    
+    .add-ons-title {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+    
+    .add-ons-list {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 0 10px;
+    }
+    
+    .add-on-item {
+        padding: 12px 0;
+    }
+    
+    .add-on-name {
+        font-size: 0.85rem;
+    }
+    
+    .add-on-price {
+        font-size: 0.8rem;
+    }
+    
+    .testimonials-section {
+        padding: 30px 0;
+    }
+    
+    .testimonials-title {
+        font-size: 2.2rem;
+        margin-bottom: 25px;
+    }
+    
+    .testimonials-content {
+        gap: 40px;
+    }
+    
+    .testimonial-item {
+        min-width: 280px;
+        max-width: 280px;
+        padding: 20px;
+    }
+    
+    .testimonial-item p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .testimonial-author {
+        font-size: 0.75rem;
+    }
+}
+
+/* FAQ Section */
+.faq-section {
+    background: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.faq-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.faq-layout {
+    display: flex;
+    height: 700px;
+    align-items: stretch;
+    margin: 0;
+}
+
+.faq-content {
+    flex: 1;
+    padding: 0 80px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+}
+
+.faq-content::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, #ddd 20%, #ddd 80%, transparent);
+}
+
+.faq-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+    color: #4a5568;
+    margin: 0 0 40px 0;
+    letter-spacing: -1px;
+}
+
+.faq-questions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq-question-item {
+    padding: 1rem 0;
+    border: none;
+    border-bottom: 1px solid #e9ecef;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.faq-question-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question-item:hover {
+    background: rgba(102, 126, 234, 0.05);
+    transform: none;
+    box-shadow: none;
+    padding-left: 0.5rem;
+}
+
+.faq-question-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #2c3e50;
+    margin: 0;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.faq-image {
+    flex: 1;
+    background-color: #e8e8e8;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.faq-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+}
+
+.close:hover {
+    color: #000;
+}
+
+#modal-question {
+    font-family: 'Playfair Display', serif;
+    color: #2c3e50;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    padding-right: 2rem;
+}
+
+#modal-answer {
+    font-family: 'Montserrat', sans-serif;
+    color: #666;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Inquiry Section */
+.inquiry-section {
+    padding: 100px 0;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+.inquiry-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.inquiry-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.inquiry-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inquiry-btn {
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    background: white;
+    color: #000000;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.inquiry-btn:hover {
+    background: #f8f9ff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    color: #5a67d8;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 80px 0;
+    background: #f5f5f5;
+    color: #333;
+}
+
+
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+    color: #4a5568;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+.contact-content {
+    display: flex;
+    min-height: 450px;
+    align-items: stretch;
+    margin: 40px 2rem 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-left {
+    flex: 1;
+    background-color: #e8e8e8;
+    min-height: 450px;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    padding: 0;
+    position: relative;
+}
+
+.contact-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contact-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.contact-image-container:hover img {
+    transform: scale(1.05);
+}
+
+.contact-right {
+    flex: 1;
+    padding: 60px 50px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 450px;
+    position: relative;
+}
+
+
+
+.contact-form-section {
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+.contact-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    background: #ffffff;
+    color: #2d3748;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-1px);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.submit-btn {
+    font-family: 'Montserrat', sans-serif;
+    background: #000000;
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    min-width: 140px;
+    margin: 1rem auto 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+/* Footer */
+.footer {
+    background: #000000;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-logo h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 3px;
+}
+
+.footer-logo p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin: 0;
+    color: #bdc3c7;
+    letter-spacing: 1px;
+}
+
+.footer-social {
+    margin-top: 1rem;
+}
+
+.footer-social .social-link {
+    width: auto;
+    height: auto;
+    background: transparent;
+    border-radius: 0;
+    padding: 8px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    color: #bdc3c7;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.footer-social .social-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-1px);
+}
+
+.footer-description {
+    font-family: 'Montserrat', sans-serif;
+    color: #bdc3c7;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transform: translateY(-2px);
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.footer-column h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-column a {
+    font-family: 'Montserrat', sans-serif;
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: #667eea;
+}
+
+.footer-bottom {
+    font-family: 'Montserrat', sans-serif;
+    border-top: 1px solid #34495e;
+    padding-top: 1rem;
+    text-align: center;
+    color: #bdc3c7;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 0.25rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Header Mobile Styles */
+    header {
+        padding: 20px 0;
+    }
+    
+    .logo h1 {
+        font-size: 2rem;
+        letter-spacing: 4px;
+        margin-bottom: 3px;
+    }
+    
+    .logo p {
+        font-size: 0.7rem;
+        letter-spacing: 1.5px;
+    }
+    
+    /* FAQ Section Mobile */
+    .faq-layout {
+        flex-direction: column;
+        height: auto;
+        align-items: stretch;
+    }
+    
+    .faq-content {
+        padding: 40px 20px;
+        order: 1;
+    }
+    
+    .faq-content::before {
+        display: none;
+    }
+    
+    .faq-header h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    .faq-question-item {
+        padding: 1.2rem 0;
+    }
+    
+    .faq-question-item h3 {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .faq-image {
+        order: 2;
+        height: 250px;
+        min-height: 250px;
+    }
+    
+    .modal-content {
+        width: 90%;
+        margin: 20% auto;
+        padding: 1.5rem;
+    }
+    
+    #modal-question {
+        font-size: 1.1rem;
+        padding-right: 1.5rem;
+    }
+    
+    #modal-answer {
+        font-size: 0.9rem;
+    }
+    
+    /* Testimonial Section Mobile */
+    .testimonial-section {
+        padding: 40px 0;
+    }
+    
+    .testimonial-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+    
+    .testimonial-item {
+        min-width: 280px;
+        max-width: 280px;
+        padding: 20px;
+        margin: 0 10px;
+    }
+    
+    .testimonial-item p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+    
+    .testimonial-author {
+        font-size: 0.8rem;
+    }
+    
+    /* Inquiry Section Mobile */
+    .inquiry-section {
+        padding: 40px 0;
+    }
+    
+    .inquiry-container {
+        padding: 0 1.5rem;
+    }
+    
+    .inquiry-content {
+        padding: 30px 20px;
+        text-align: center;
+    }
+    
+    .inquiry-content h2 {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+    
+    .inquiry-content p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+        line-height: 1.6;
+    }
+    
+    .inquiry-btn {
+        padding: 0.8rem 2rem;
+        font-size: 0.9rem;
+        letter-spacing: 0.8px;
+    }
+    
+    /* Contact Section Mobile */
+    .contact-section {
+        padding: 40px 0;
+    }
+    
+    .contact-header h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+    
+    .contact-content {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .contact-left {
+        min-height: 250px;
+        order: 1;
+    }
+    
+    .contact-right {
+        padding: 40px 30px;
+        order: 2;
+        min-height: auto;
+    }
+    
+    .contact-right::before {
+        display: none;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+    
+    .form-group select {
+        height: 46px;
+        min-height: 46px;
+        padding: 0.6rem 1rem;
+        line-height: 1.2;
+    }
+    
+    .submit-btn {
+        padding: 0.9rem 2rem;
+        font-size: 0.95rem;
+        min-width: 130px;
+    }
+    
+    /* Footer Mobile */
+    .footer {
+        padding: 30px 0;
+    }
+    
+    .footer-container {
+        padding: 0 1.5rem;
+    }
+    
+    .footer-logo h3 {
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+    }
+    
+    .footer-logo p {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+    
+    .footer-social .social-link {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    /* Top Navigation Mobile Styles */
+    .top-nav {
+        gap: 8px;
+        flex-wrap: wrap;
+        padding: 0 10px;
+    }
+    
+    .top-nav a {
+        font-size: 0.75rem;
+        padding: 6px 4px;
+    }
+    
+    /* Hero Section Mobile Styles */
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .content-left {
+        padding: 40px 30px;
+        height: auto;
+        min-height: 60vh;
+    }
+    
+    .content-left::before {
+        display: none;
+    }
+    
+    .content-right {
+        height: 40vh;
+        min-height: 300px;
+        padding: 0;
+    }
+    
+    .hero-section h2 {
+        font-size: 2.8rem;
+        margin-bottom: 40px;
+        line-height: 1.2;
+    }
+    
+    /* Marquee Section Mobile Styles */
+    .marquee-section {
+        padding: 8px 0;
+    }
+    
+    .marquee-content {
+        gap: 30px;
+        animation: marquee 20s linear infinite;
+    }
+    
+    .marquee-content span {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+    
+    /* Inquiry Section Mobile Styles - handled in tablet breakpoint */
+    
+    .about-section {
+        padding: 60px 0;
+    }
+    
+    .about-container {
+        padding: 0 30px;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .about-image-left,
+    .about-image-right {
+        padding-top: 0;
+        order: 2;
+    }
+    
+    .about-text {
+        order: 1;
+        padding: 0;
+    }
+    
+    .about-image-right {
+        order: 3;
+    }
+    
+    .about-img {
+        max-width: 200px;
+        height: 250px;
+    }
+    
+    .about-text h3 {
+        font-size: 1.7rem;
+        margin-bottom: 15px;
+    }
+    
+    .about-text h4 {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+    
+    .about-text p {
+        font-size: 1.05rem;
+        margin-bottom: 18px;
+        text-align: left;
+    }
+    
+    /* Services responsive */
+    .services-container {
+        padding: 0 1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .service-card {
+        padding: 2rem;
+    }
+    
+    /* FAQ responsive */
+    .faq-container {
+        padding: 0 1rem;
+    }
+    
+    /* Contact responsive */
+    .contact-section {
+        padding: 50px 0;
+    }
+    
+    .contact-header {
+        margin-bottom: 30px;
+        padding: 0 20px;
+    }
+    
+    .contact-header h2 {
+        font-size: 2.2rem;
+        letter-spacing: 0.8px;
+        line-height: 1.1;
+    }
+    
+    .contact-content {
+        flex-direction: column;
+        height: auto;
+        margin: 30px 20px 0;
+    }
+    
+    .contact-left {
+        min-height: 250px;
+        order: 1;
+        margin-bottom: 0;
+    }
+    
+    .contact-right {
+        padding: 40px 25px;
+        order: 2;
+        height: auto;
+    }
+    
+    .contact-right::before {
+        display: none;
+    }
+    
+    .contact-form-container {
+        max-width: 500px;
+    }
+    
+    .form-group label {
+        font-size: 0.85rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+    
+    .submit-btn {
+        padding: 0.9rem 2.2rem;
+        font-size: 0.95rem;
+        min-width: 140px;
+    }
+    
+    /* Footer responsive */
+    .footer-container {
+        padding: 0 1rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Contact Section Small Mobile */
+    .contact-section {
+        padding: 40px 0;
+    }
+    
+    .contact-header {
+        margin-bottom: 25px;
+        padding: 0 15px;
+    }
+    
+    .contact-header h2 {
+        font-size: 1.6rem;
+        letter-spacing: 0.5px;
+        line-height: 1.2;
+    }
+    
+    .contact-content {
+        margin: 20px 15px 0;
+        min-height: auto;
+        flex-direction: column;
+    }
+    
+    .contact-left {
+        min-height: 180px;
+        order: 1;
+        margin-bottom: 0;
+    }
+    
+    .contact-right {
+        padding: 30px 15px;
+        order: 2;
+        min-height: auto;
+    }
+    
+    .contact-right::before {
+        display: none;
+    }
+    
+    .contact-form-container {
+        max-width: 100%;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-group label {
+        font-size: 0.8rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.7rem 0.8rem;
+        font-size: 0.95rem;
+        border-radius: 8px;
+        border-width: 1px;
+    }
+    
+    .form-group select {
+        height: 42px;
+        min-height: 42px;
+        padding: 0.5rem 0.8rem;
+        line-height: 1.2;
+    }
+    
+    .form-group textarea {
+        min-height: 100px;
+    }
+    
+    .submit-btn {
+        padding: 0.8rem 1.8rem;
+        font-size: 0.9rem;
+        min-width: 110px;
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+        display: block;
+    }
+}
