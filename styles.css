@@ -431,11 +431,12 @@ header {
   }
 }
 
-/* iPhone 15 specific styles */
-@media (max-width: 430px) and (max-height: 932px) {
+/* Mobile responsive styles for better image display */
+@media (max-width: 430px) {
     .content-right {
-        height: 65vh;
-        min-height: 500px;
+        height: auto;
+        min-height: 50vh;
+        max-height: 70vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -449,8 +450,8 @@ header {
     }
     
     .faq-image {
-        height: 400px;
-        min-height: 400px;
+        height: 600px;
+        min-height: 600px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -459,7 +460,7 @@ header {
     .faq-image img {
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
         object-position: center;
     }
 }
@@ -564,7 +565,8 @@ header {
 #main-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
     transition: opacity 0.5s ease;
 }
 
@@ -1153,8 +1155,8 @@ header {
     }
     
     .faq-image {
-        height: 350px;
-        min-height: 350px;
+        height: 500px;
+        min-height: 500px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -2159,8 +2161,9 @@ header {
     }
     
     .content-right {
-        height: 40vh;
-        min-height: 300px;
+        height: auto;
+        min-height: 45vh;
+        max-height: 60vh;
         padding: 0;
     }
     
