@@ -42,6 +42,8 @@ header {
     display: flex;
     height: 100vh;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 .content-left {
@@ -79,9 +81,12 @@ header {
 .marquee-section {
     background: #494949;
     color: #fff;
-    padding: 0 0;
+    padding: 20px 0;
     overflow: hidden;
     white-space: nowrap;
+    position: relative;
+    z-index: 5;
+    margin-top: 60px;
 }
 
 .marquee {
@@ -361,8 +366,9 @@ header {
 }
 .grid-image img {
     width: 100%;
-    height: 320px;
-    object-fit: contain;
+    height: auto;
+    max-width: 100%;
+    display: block;
     border: 1px solid #eee;
     background: #fafafa;
 }
@@ -433,25 +439,35 @@ header {
 
 /* Mobile responsive styles for better image display */
 @media (max-width: 430px) {
-    .content-right {
+    .container {
+        flex-direction: column;
         height: auto;
-        min-height: 50vh;
-        max-height: 70vh;
+        min-height: 100vh;
+    }
+    
+    .content-left {
+        order: 1;
+        min-height: auto;
+    }
+    
+    .content-right {
+        height: 50vh;
+        min-height: 400px;
+        max-height: 60vh;
         display: flex;
         align-items: center;
         justify-content: center;
+        order: 2;
     }
     
     #main-image {
         width: 100%;
-        height: 100%;
-        object-fit: contain;
-        object-position: center;
+        height: auto;
+        max-width: 100%;
+        display: block;
     }
     
     .faq-image {
-        height: 600px;
-        min-height: 600px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -459,9 +475,9 @@ header {
     
     .faq-image img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
+        height: auto;
+        max-width: 100%;
+        display: block;
     }
 }
 
@@ -476,7 +492,8 @@ header {
     gap: 10px;
   }
   .grid-image img {
-    height: 180px;
+    height: auto;
+    width: 100%;
   }
   .about-name {
     font-size: 1.5rem;
@@ -489,6 +506,72 @@ header {
   }
   .about-bottom-text p {
     font-size: 13px;
+  }
+  
+  /* Ensure images don't get cropped on mobile */
+  #main-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .faq-image img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .faq-layout {
+    flex-direction: column;
+    min-height: auto;
+  }
+  
+  .faq-image {
+    min-height: auto;
+    order: -1;
+  }
+}
+
+/* Tablet responsive styles */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .content-left, .content-right {
+    width: 100%;
+    height: auto;
+  }
+  
+  .hero-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+  
+  .faq-layout {
+    flex-direction: column;
+    min-height: auto;
+  }
+  
+  .faq-image {
+    min-height: auto;
+    order: -1;
+  }
+  
+  #main-image, .faq-image img, .about-main-image, .contact-image-container img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* iPhone and small device optimization */
+@media (max-width: 390px) {
+  .hero-section h2 {
+    font-size: 2rem;
+  }
+  
+  #main-image, .faq-image img {
+    width: 100%;
+    height: auto;
   }
 }
 .about-text {
@@ -553,20 +636,20 @@ header {
     justify-content: stretch;
     padding: 0;
     position: relative;
+    z-index: 1;
 }
 
 .image-container {
     position: relative;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
+    height: auto;
 }
 
 #main-image {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
+    height: auto;
+    max-width: 100%;
+    display: block;
     transition: opacity 0.5s ease;
 }
 
@@ -1056,9 +1139,16 @@ header {
     }
     
     /* Hero Section Mobile Styles - Small Screens */
+    .container {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+    
     .content-left {
         padding: 30px 15px;
-        min-height: 50vh;
+        min-height: auto;
+        order: 1;
     }
     
     .content-right {
@@ -1067,12 +1157,13 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
+        order: 2;
     }
     
     #main-image {
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
         object-position: center;
     }
     
@@ -1155,8 +1246,8 @@ header {
     }
     
     .faq-image {
-        height: 500px;
-        min-height: 500px;
+        height: 700px;
+        min-height: 700px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1165,7 +1256,7 @@ header {
     .faq-image img {
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
         object-position: center;
     }
     
@@ -1400,7 +1491,7 @@ header {
 
 .faq-layout {
     display: flex;
-    height: 700px;
+    min-height: 700px;
     align-items: stretch;
     margin: 0;
 }
@@ -1488,8 +1579,9 @@ header {
 
 .faq-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    max-width: 100%;
+    display: block;
     transition: opacity 0.5s ease;
 }
 
@@ -1662,14 +1754,14 @@ header {
 .contact-image-container {
     position: relative;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
+    height: auto;
 }
 
 .contact-image-container img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    max-width: 100%;
+    display: block;
     transition: transform 0.3s ease;
 }
 
