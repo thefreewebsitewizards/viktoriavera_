@@ -46,6 +46,12 @@ header {
     z-index: 1;
 }
 
+@media (min-width: 769px) {
+    .container {
+        z-index: 10;
+    }
+}
+
 .content-left {
     flex: 1;
     padding: 0 80px;
@@ -87,6 +93,18 @@ header {
     position: relative;
     z-index: 5;
     margin-top: 60px;
+}
+
+@media (min-width: 769px) {
+    .marquee-section {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        margin-top: 0;
+        z-index: 15;
+        border-bottom: 0;
+    }
 }
 
 .marquee {
@@ -601,6 +619,24 @@ header {
     margin-top: 15px;
     font-size: 0.8rem;
   }
+  
+  /* Service features list mobile fix */
+  .service-features {
+    margin: 20px 0;
+  }
+  
+  .service-features li {
+    font-size: 0.75rem;
+    padding: 8px 0 8px 20px;
+    line-height: 1.7;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  .service-card {
+    padding: 20px 15px;
+  }
 }
 .about-text {
     padding: 0 20px;
@@ -669,11 +705,27 @@ header {
     z-index: 1;
 }
 
+@media (min-width: 769px) {
+    .content-right {
+        z-index: 10;
+        overflow: hidden;
+    }
+}
+
 .image-container {
     position: relative;
     width: 100%;
     height: auto;
     z-index: 1;
+}
+
+@media (min-width: 769px) {
+    .image-container {
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        overflow: hidden;
+    }
 }
 
 #main-image {
@@ -682,6 +734,15 @@ header {
     max-width: 100%;
     display: block;
     transition: opacity 0.5s ease;
+}
+
+@media (min-width: 769px) {
+    #main-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
 }
 
 .image-switcher {
@@ -887,6 +948,9 @@ header {
     line-height: 1.6;
     font-size: 0.9rem;
     font-family: 'Montserrat', sans-serif;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .service-features li::before {
@@ -1021,7 +1085,10 @@ header {
     
     .service-features li {
         font-size: 0.85rem;
-        padding: 5px 0;
+        padding: 8px 0;
+        line-height: 1.5;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
     
     .add-ons-section {
@@ -1214,9 +1281,9 @@ header {
         font-size: 0.85rem;
     }
     
-    /* FAQ Section Small Mobile */
+    /* FAQ Section Small Mobile - Keep desktop padding */
     .faq-content {
-        padding: 30px 15px;
+        padding: 0 80px;
     }
     
     .faq-header h2 {
@@ -1230,6 +1297,16 @@ header {
     
     .faq-question-item h3 {
         font-size: 0.85rem;
+    }
+    
+    /* Service features mobile fix */
+    .service-features li {
+        font-size: 0.8rem;
+        padding: 6px 0;
+        line-height: 1.6;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
     }
     
     /* Testimonial Section Extra Small Mobile */
@@ -1447,7 +1524,11 @@ header {
     
     .service-features li {
         font-size: 0.8rem;
-        padding: 4px 0;
+        padding: 6px 0;
+        line-height: 1.6;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
     }
     
     .add-ons-section {
@@ -1529,7 +1610,7 @@ header {
 
 .faq-content {
     flex: 1;
-    padding: 0 80px;
+    padding: 60px 80px 0 80px;
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -2065,7 +2146,7 @@ header {
         letter-spacing: 1.5px;
     }
     
-    /* FAQ Section Mobile */
+    /* FAQ Section Mobile - Keep desktop padding for desktop view */
     .faq-layout {
         flex-direction: column;
         height: auto;
@@ -2100,6 +2181,15 @@ header {
         order: 2;
         height: 250px;
         min-height: 250px;
+    }
+    
+    /* Service features mobile fix */
+    .service-features li {
+        font-size: 0.85rem;
+        padding: 6px 0 6px 20px;
+        line-height: 1.6;
+        word-break: break-word;
+        overflow-wrap: break-word;
     }
     
     .modal-content {

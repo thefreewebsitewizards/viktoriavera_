@@ -181,24 +181,78 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             // Simple validation
-            if (!formObject.name || !formObject.email || !formObject.service) {
+            if (!formObject['first-name'] || !formObject['last-name'] || !formObject.email || !formObject['hear-about']) {
                 alert('Please fill in all required fields.');
                 return;
             }
             
-            // Simulate form submission
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.innerHTML;
+            // Construct email content
+            const fullName = `${formObject['first-name']} ${formObject['last-name']}`;
+            const email = formObject.email;
+            const phone = formObject.phone || 'Not provided';
+            const service = formObject['hear-about'];
+            const projectGoals = formObject['project-goals'] || 'Not provided';
             
-            submitBtn.innerHTML = '<span>Sending...</span>';
-            submitBtn.disabled = true;
+            const subject = `VV Social Media Inquiry - ${fullName}`;
+            const body = `Hi Viktoria,
+
+I found your website and I'm interested in your social media management services.
+
+**My Details:**
+- Name: ${fullName}
+- Email: ${email}
+- Phone: ${phone}
+- Service Interest: ${service}
+
+**Project Details:**
+${projectGoals}
+
+Looking forward to hearing from you!
+
+Best regards,
+${fullName}`;
             
-            setTimeout(() => {
-                alert('Thank you for your message! We\'ll get back to you within 24 hours.');
-                this.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }, 2000);
+            // Create mailto link - use both Gmail web and native mail app approaches
+            const mailtoLink = `mailto:vverasocialmedia@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Try to open Gmail web app first, fallback to native mail
+            const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=vverasocialmedia@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Detect if user is on mobile
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            // Function to handle the mail functionality
+            function openEmailClient() {
+                // Try Gmail web first
+                const gmailWindow = window.open(gmailLink, '_blank');
+                
+                // Fallback for cases where popup is blocked
+                if (!gmailWindow || gmailWindow.closed || typeof gmailWindow.closed === 'undefined') {
+                    // Fallback to mailto link
+                    window.location.href = mailtoLink;
+                    
+                    // Show instructions for mobile users
+                    if (isMobile) {
+                        alert('Opening your email app... If it doesn\'t open, please manually email vverasocialmedia@gmail.com with your inquiry details.');
+                    }
+                } else {
+                    // Gmail web opened successfully
+                    if (isMobile) {
+                        alert('Opening Gmail... If you prefer to use your email app, tap "Cancel" and we\'ll redirect you to your email client.');
+                        setTimeout(() => {
+                            window.location.href = mailtoLink;
+                        }, 3000);
+                    }
+                }
+            }
+            
+            openEmailClient();
+            
+            // Reset form
+            this.reset();
+            
+            // Show confirmation
+            alert('Opening Gmail to send your inquiry! Please review the message and click send.');
         });
     }
 });
